@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="homestyle.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo" class="logo-img">
+            <span class="logo-name">Learning</span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="courses.php">Courses</a></li>
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Welcome, <span id="username"></span>!</h1>
+
+        <div class="dashboard">
+            <div class="stats-box">
+                <h2 id="courses-count"></h2>
+                <p>Enrolled Courses</p>
+            </div>
+
+            <div class="stats-box">
+                <h2>200</h2> <!-- Example: Total Points -->
+                <p>Points</p>
+            </div>
+
+            <div class="stats-box">
+                <h2 id="modules-count"></h2>
+                <p>Completed Modules</p>
+            </div>
+        </div>
+
+        <h2>Enrolled Courses</h2>
+        <div id="courses-list" class="courses-list"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("home.php")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("username").textContent = data.username;
+                    document.getElementById("courses-count").textContent = data.courses.length;
+                    document.getElementById("modules-count").textContent = data.courses.length; // Placeholder
+
+                    const coursesList = document.getElementById("courses-list");
+                    data.courses.forEach(course => {
+                        let courseBox = document.createElement("div");
+                        courseBox.className = "course-box";
+                        courseBox.innerHTML = `
+                            <h3>${course.course_name}</h3>
+                            <img src="course.jpg" alt="Course Image" class="course-img">
+                            <p>Progress: <span id="progress-${course.id}">75%</span></p>
+                            <button class="view-course-btn" onclick="viewCourse(${course.id})">View Course</button>
+                        `;
+                        coursesList.appendChild(courseBox);
+                    });
+                })
+                .catch(error => console.error("Error fetching data:", error));
+        });
+
+        function viewCourse(courseId) {
+            window.location.href = `course_details.php?id=${courseId}`;
+        }
+    </script>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="images/logo.png" alt="Logo" class="footer-logo">
+                <h3>LEARNING</h3>
+            </div>
+            <div class="footer-middle">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <style>
+            footer {
+                background-color: #111;
+                color: white;
+                padding: 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+    
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+    
+            .footer-left {
+                display: flex;
+                align-items: center;
+            }
+    
+            .footer-logo {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+            }
+    
+            .footer-left h3 {
+                font-size: 24px;
+                color: #ff7200;
+            }
+    
+            .footer-middle h4,
+            .footer-right h4 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+    
+            .footer-middle ul,
+            .footer-right ul {
+                list-style-type: disc;
+                padding-left: 20px;
+            }
+    
+            .footer-middle ul li,
+            .footer-right ul li {
+                margin-bottom: 5px;
+            }
+    
+            .footer-middle ul li a,
+            .footer-right ul li a {
+                color: white;
+                text-decoration: none;
+                transition: 0.3s;
+            }
+    
+            .footer-middle ul li a:hover,
+            .footer-right ul li a:hover {
+                color: #ff7200;
+            }
+        </style>
+    </footer>
+    
+</body>
+
+</html>

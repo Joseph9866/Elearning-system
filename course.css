@@ -1,0 +1,142 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%), url(images/ima.jpeg);
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 15px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+}
+
+.logo-name {
+    color: #ff7200;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #ff7200;
+}
+
+/* Page Content */
+.content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Courses Grid */
+.courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive layout */
+    column-gap: 50px; /* Increased space between columns */
+    row-gap: 40px; /* Increased space between rows */
+    column-gap: 72px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Course Box */
+.course {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+
+/* Course Title */
+.course h2 {
+    color: #ff7200;
+    font-size: 22px; /* Slightly larger text */
+}
+
+/* Course Image */
+.course-img {
+    width: 100%;
+    max-width: 300px; /* Larger images */
+    height: auto;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+/* Course Description */
+.course-description {
+    color: #555;
+    font-size: 16px; /* Larger text for readability */
+    margin-bottom: 15px;
+}
+
+/* Enroll Button */
+.enroll-btn {
+    background-color: #ff7200;
+    border: none;
+    padding: 12px 18px; /* Bigger button */
+    font-size: 16px; /* Bigger text */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.enroll-btn a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.enroll-btn:hover {
+    background-color: #e65c00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .courses-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust for smaller screens */
+    }
+}

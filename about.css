@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 15px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo-name {
+    color: #ff7200;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #ff7200;
+}
+
+/* Page Content */
+.content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: white;
+    padding: 10px 20px; /* Reduce padding */
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between; /* Align items closely */
+    align-items: center;
+}
+
+/* Footer Left Section (Logo & Name) */
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 40px;  /* Adjust logo size */
+    height: auto;
+    margin-right: 5px; /* Reduce space between logo and text */
+}
+
+/* Footer Center Section (Pages List) */
+.footer-pages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    gap: 10px; /* Reduce spacing between items */
+}
+
+/* Footer Right Section (Social Media) */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Reduce space between social media icons */
+}

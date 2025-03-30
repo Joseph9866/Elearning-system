@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="styleregister.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">LEARING</h2>
+        </div>
+        
+        <div class="class">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="courses.html">COURSES</a></li>
+                <li><a href="profile.html">PROFILE</a></li>
+            </ul>
+        </div>
+       </div>
+       <div class="content">
+        </div>     
+    <form action="register.php" method="POST"> 
+        <p>Register here</p>       
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="text" name="full_name" placeholder="Full Name" required>        
+        <input type="text" name="id_number" placeholder="ID Number" required>        
+        <input type="email" name="email" placeholder="Email" required>        
+        <input type="text" name="phone_number" placeholder="Phone Number" required>
+        <input type="text" name="address" placeholder="Address" required>        
+        <input type="text" name="city" placeholder="City" required>        
+        <input type="text" name="country" placeholder="Country" required><br>
+        <button class="btnn">Register</button>
+    </form>
+</body>
+
+</html>
