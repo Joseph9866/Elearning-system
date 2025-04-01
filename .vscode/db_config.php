@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root"; // default MySQL username
 $password = ""; // default MySQL password for root (empty on Ubuntu)
-$dbname = "learning_platform"; // database name
+$dbname = "elearning-system1"; // database name
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

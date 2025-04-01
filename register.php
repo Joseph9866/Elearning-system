@@ -5,7 +5,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "elearning";
+$dbname = "elearning-system1";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
